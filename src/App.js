@@ -18,21 +18,29 @@ const WeatherDetails = ({ icon, temp, city, country, lat, log, humidity, wind })
   return (
     <>
       <div className='image'>
-        <img src={icon} alt='weather' />
+
+        <img src={icon} alt='weather' className='' />
       </div>
-      <div className='temp'>{temp}°C</div>
+      
+      <div className='temp  '>{temp}°C</div>
       <div className='location'>{city}</div>
       <div className='country'>{country}</div>
       <div className='cord'>
-        <div>
-          <span className='lat'>latitude</span>
-          <span>{lat}</span>
-        </div>
-        <div>
-          <span className='log'>longitude</span>
-          <span>{log}</span>
-        </div>
-      </div>
+      
+        
+            
+            <div>
+              <span className='lat'>latitude</span>
+              <span>{lat}</span>
+            </div>
+            <div>
+              <span className='log'>longitude</span>
+              <span>{log}</span>
+              
+            </div>
+           </div>
+        
+        
       <div className='data-container'>
         <div className='element'>
           <img src={humidityIcon} alt="humidity" className='icon' />
@@ -174,9 +182,9 @@ function App() {
               <span className="btn btn-dark mb-4 text-center">Switch to Dark Mode</span>
             )}
           </button>
-          <p className='copy'>
+          {/* <p className='copy'>
             Designed by <span>Gokul</span>
-          </p>
+          </p> */}
         </div>
       )}
     </NetworkConnection>
