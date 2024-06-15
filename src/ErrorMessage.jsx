@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const ErrorMessage = () => {
   return (
     <div class="alert alert-danger" role="alert">
-  404 City not Found!
-</div>
-  )
-}
+      404 City not Found!
+    </div>
+  );
+};
 
-export default ErrorMessage
+export default ErrorMessage;

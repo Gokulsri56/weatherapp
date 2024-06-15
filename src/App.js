@@ -1,6 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
-import { useEffect, useState } from 'react';
+import "bootstrap/dist/css/bootstrap.css";
+import "./App.css";
+import { useEffect, useState } from "react";
 
 import searchIcon from "./assets/search.jpeg";
 import clearIcon from "./assets/sun.jpg";
@@ -10,50 +10,53 @@ import rainIcon from "./assets/rainicon.jpeg";
 import windIcon from "./assets/windicon.jpeg";
 import snowIcon from "./assets/snowicon.jpeg";
 import humidityIcon from "./assets/humidity.jpeg";
-import ErrorMessage from './ErrorMessage';
-import NetworkConnection from './NetworkConnection';
-import GetTime from './GetTime';
+import ErrorMessage from "./ErrorMessage";
+import NetworkConnection from "./NetworkConnection";
+import GetTime from "./GetTime";
 
-const WeatherDetails = ({ icon, temp, city, country, lat, log, humidity, wind }) => {
+const WeatherDetails = ({
+  icon,
+  temp,
+  city,
+  country,
+  lat,
+  log,
+  humidity,
+  wind,
+}) => {
   return (
     <>
-      <div className='image'>
-
-        <img src={icon} alt='weather' className='' />
+      <div className="image">
+        <img src={icon} alt="weather" className="" />
       </div>
-      
-      <div className='temp  '>{temp}°C</div>
-      <div className='location'>{city}</div>
-      <div className='country'>{country}</div>
-      <div className='cord'>
-      
-        
-            
-            <div>
-              <span className='lat'>latitude</span>
-              <span>{lat}</span>
-            </div>
-            <div>
-              <span className='log'>longitude</span>
-              <span>{log}</span>
-              
-            </div>
-           </div>
-        
-        
-      <div className='data-container'>
-        <div className='element'>
-          <img src={humidityIcon} alt="humidity" className='icon' />
-          <div className='data'>
-            <div className='humidityp'>{humidity}%</div>
-            <div className='text'>Humidity</div>
+
+      <div className="temp  ">{temp}°C</div>
+      <div className="location">{city}</div>
+      <div className="country">{country}</div>
+      <div className="cord">
+        <div>
+          <span className="lat">latitude</span>
+          <span>{lat}</span>
+        </div>
+        <div>
+          <span className="log">longitude</span>
+          <span>{log}</span>
+        </div>
+      </div>
+
+      <div className="data-container">
+        <div className="element">
+          <img src={humidityIcon} alt="humidity" className="icon" />
+          <div className="data">
+            <div className="humidityp">{humidity}%</div>
+            <div className="text">Humidity</div>
           </div>
         </div>
-        <div className='element'>
-          <img src={windIcon} alt="wind" className='icon' />
-          <div className='data'>
-            <div className='humidityp'>{wind} km/h</div>
-            <div className='text'>Wind Speed</div>
+        <div className="element">
+          <img src={windIcon} alt="wind" className="icon" />
+          <div className="data">
+            <div className="humidityp">{wind} km/h</div>
+            <div className="text">Wind Speed</div>
           </div>
         </div>
       </div>
@@ -149,21 +152,21 @@ function App() {
       {cityNotFound ? (
         <ErrorMessage />
       ) : (
-        <div className='container'>
-          <div className='input-container'>
+        <div className="container">
+          <div className="input-container">
             <input
               type="text"
-              className='cityInput'
-              placeholder='Search City'
+              className="cityInput"
+              placeholder="Search City"
               onChange={handleCity}
               value={text}
               onKeyDown={handleKeyDown}
             />
-            <div className='search-icon' onClick={search}>
-              <img src={searchIcon} alt='search' className='img' />
+            <div className="search-icon" onClick={search}>
+              <img src={searchIcon} alt="search" className="img" />
             </div>
           </div>
-          <GetTime/>
+          <GetTime />
           <WeatherDetails
             icon={icon}
             temp={temp}
@@ -174,17 +177,18 @@ function App() {
             humidity={humidity}
             wind={wind}
           />
-          
-          <button className='changemode mb-2' onClick={toggleDarkMode}>
+
+          <button className="changemode mb-2" onClick={toggleDarkMode}>
             {darkMode ? (
-              <span className="btn btn-light mb-5 text-center">Switch to Light Mode</span>
+              <span className="btn btn-light mb-5 text-center">
+                Switch to Light Mode
+              </span>
             ) : (
-              <span className="btn btn-dark mb-4 text-center">Switch to Dark Mode</span>
+              <span className="btn btn-dark mb-4 text-center">
+                Switch to Dark Mode
+              </span>
             )}
           </button>
-          {/* <p className='copy'>
-            Designed by <span>Gokul</span>
-          </p> */}
         </div>
       )}
     </NetworkConnection>
